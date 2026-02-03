@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+struct Node {
 
-struct Node{
     int data;
     struct Node *next;
 };
-struct Node *createnode(int value){
-    struct Node *newnode = (struct Node*)malloc(sizeof(struct Node));
 
-    if(newnode == NULL){
-        printf("memry allocation failed");
-        return NULL;
-    }
-    newnode->data = value;
-    newnode->next = NULL;
-    return newnode;
+struct Node *createnode(int value){
+struct Node *newnode = (struct Node*)malloc(sizeof(struct Node));
+
+if(newnode == NULL){
+    printf("memory alloc failed");
+    return NULL;
+}
+newnode->data = value;
+newnode->next = NULL;
+return newnode;
 }
 void InsertatEnd(struct Node **head,int value){
     struct Node *newnode = createnode(value);
@@ -24,19 +25,19 @@ void InsertatEnd(struct Node **head,int value){
         return;
     }
     struct Node *temp = *head;
-    while(temp->next!= NULL){
+    while(temp->next != NULL){
         temp = temp->next;
-       
-    }
-        temp->next = newnode;
+    
+
+}
+temp->next = newnode;
 }
 void InsertAtBeginning(struct Node **head,int value){
-    struct Node *newnode = createnode(value);
+struct Node *newnode = createnode(value);
 
-    newnode->next = *head;
-    *head = newnode;
+newnode->next = *head;
+*head = newnode;
 }
-
 struct Node* reverseIterative(struct Node* head) {
     struct Node* prev = NULL;
     struct Node* current = head;
