@@ -59,6 +59,23 @@ void InsertAtBeginning(struct Node **head,int value){
     *head = newnode;
 }
 
+int sumiteration(struct Node *head){
+    int sum = 0;
+    while(head != NULL){
+        sum += head->data;
+        head = head->next;
+    }
+    return sum;
+
+}
+int recursivesum(struct Node *head){
+    if(head == NULL){
+        return 0;
+        
+    }
+    return head->data + recursivesum(head->next);
+}
+
 int main(){
 struct Node *head = NULL;
 
@@ -71,12 +88,13 @@ InsertAtEnd(&head,67);
 InsertAtEnd(&head,77);
 
 printf("%d\n", getmiddle(head));
-
+int result = sumiteration(head);
 struct Node *temp = head;
 while(temp != NULL){
     printf("%d->",temp->data);
 
     temp = temp->next;
 }
+printf("%d",result);
 
 }
