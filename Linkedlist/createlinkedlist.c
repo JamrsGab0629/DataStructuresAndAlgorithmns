@@ -55,8 +55,8 @@ void InsertAtEnd(struct Node **head,int value){
 void InsertAtBeginning(struct Node **head,int value){
     struct Node *newnode = createnode(value);
 
-    newnode->next = *head;
-    *head = newnode;
+    newnode->next = *head; //head becomes the second node
+    *head = newnode; // the newnode becomes head
 }
 
 int sumiteration(struct Node *head){
