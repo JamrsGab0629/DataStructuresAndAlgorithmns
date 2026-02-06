@@ -3,7 +3,7 @@
 <h1 align="center">📚 Data Structures & Algorithms</h1>
 
 <p align="center">
-  🚀 Learning DSA from fundamentals to advanced using <b>C / C++</b><br>
+  🚀 Learning DSA from fundamentals to advanced using <b>C</b><br>
   💡 Focused on problem-solving, logic, and efficiency
 </p>
 
