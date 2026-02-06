@@ -25,3 +25,4 @@ I use this repo to:
 -Linked List
 -Arrays
 -Sorting Algo
+-Searching Algo
