@@ -14,7 +14,7 @@ This repository contains my **Data Structures and Algorithms** practice codes.
 I use this repo to:
 - Build strong CS fundamentals  
 - Improve logical thinking  
-- Prepare for exams & technical interviews  
+- Prepare for exams
 
 
 
