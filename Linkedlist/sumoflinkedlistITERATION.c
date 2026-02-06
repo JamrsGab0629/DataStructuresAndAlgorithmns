@@ -25,6 +25,20 @@ int sum = 0;
     }
     return sum;
 }
+void InsertAtEnd(struct Node **head,int value){
+    struct Node *newnode = createnode(value);
+
+    if(*head == NULL){
+        *head = newnode;
+        return;
+    }
+
+    struct Node *temp = *head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+    temp->next = newnode;
+}
 int main(){
 
     struct Node *head = NULL;
@@ -32,14 +46,16 @@ int main(){
     head = createnode(11);
     head->next = createnode(90);
     head->next->next = createnode(10);
-
+InsertAtEnd(&head,22);
     int result = sumiterative(head);
 
     struct Node *temp = head;
     while(temp != NULL){
         printf("%d->",temp->data);
         temp = temp->next;
+      
     }
     printf("\n%d ",result);
+        free(temp);
 
 }
