@@ -41,6 +41,15 @@ struct Node *insert(struct Node *root,int x){
     }
     return root;
 }
+int countleaves(struct Node *root){
+    if(root == NULL){
+        return 0;
+    }
+    if(root->left == NULL && root->right == NULL){
+        return 1;
+    }
+    return countleaves(root->left) + countleaves(root->right);
+}
 int main(){
 
     struct Node *root = createnode(10);
@@ -49,4 +58,6 @@ int main(){
     root->right = createnode(90);
    
 printtree(root);
+int result = countleaves(root);
+printf("\n%d",result);
 }
