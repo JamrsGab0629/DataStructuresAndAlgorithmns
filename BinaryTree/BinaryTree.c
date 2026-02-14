@@ -48,7 +48,7 @@ int countleaves(struct Node *root){
     if(root->left == NULL && root->right == NULL){
         return 1;
     }
-    return countleaves(root->left) + countleaves(root->right);
+    return 1 + countleaves(root->left) + countleaves(root->right);
 }
 int main(){
 
