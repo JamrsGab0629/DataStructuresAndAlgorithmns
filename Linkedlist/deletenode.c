@@ -5,9 +5,8 @@ struct Node {
     int data;
     struct Node *next;
 };
-
 struct Node *createnode(int value){
-    struct Node *newnode = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *newnode = (struct Node*)malloc(sizeof(struct Node));
 
     if(newnode == NULL){
         printf("memory allocation failed");
@@ -17,49 +16,65 @@ struct Node *createnode(int value){
     newnode->next = NULL;
     return newnode;
 }
+
 struct Node *deletenode(struct Node *head,int pos){
     if(head == NULL){
         return NULL;
     }
     struct Node *temp = head;
     if(pos == 1){
-        
         head = head->next;
         free(temp);
+        return head;
     }
-
-    
-    for(int i = 1; i <= pos - 1; i++){
+    for(int i = 1;  temp != NULL && i < pos - 1; i++){
         temp = temp->next;
     }
-        if (temp == NULL || temp->next == NULL) {
-            return head;}
-
-
+    if(temp == NULL || temp->next == NULL){
+        return head;
+    }
+   
     struct Node *current = temp->next;
     temp->next = current->next;
     free(current);
 
     return head;
-    
-    
+
 
 }
 
+void insertatend(struct Node **head,int value){
+    struct Node *newnode = createnode(value);
+
+    if(*head == NULL){
+        *head = newnode;
+        return;
+    }
+
+    struct Node *temp = *head;
+    while(temp != NULL && temp->next != NULL){
+        temp = temp->next;
+
+    }
+    temp->next = newnode;
+}
+
+void printlist(struct Node *head){
+    struct Node *temp = head;
+    while(temp != NULL){
+        printf("%d->",temp->data);
+        temp = temp->next;
+
+
+    }
+}
 int main(){
-struct Node *head = NULL;
+    struct Node *head = NULL;
 
-head = createnode(10);
-head->next = createnode(90);
-head->next->next = createnode(44);
-head->next->next->next = createnode(12);
+    insertatend(&head ,10);
+    insertatend(&head ,11);
+    insertatend(&head ,12);
+    insertatend(&head ,13);
 head = deletenode(head,4);
-struct Node *temp = head;
-while (temp != NULL && temp->next != NULL){
-    printf("%d->",temp->data);
-    temp = temp->next;
-
-}
-
-
+printlist(head);
 }
