@@ -20,7 +20,7 @@ It allows **dynamic memory allocation** and efficient insertion/deletion.
 
 Here’s an example of a **singly linked list**:
 
-![Singly Linked List](https://raw.githubusercontent.com/<username>/<repo-name>/main/Linkedlist/images/linkedlist.png)
+![Singly Linked List](https://raw.githubusercontent.com/<username>/<repo-name>/main/Linkedlist/images/Singlelinkedlist.png)
 
 
 *Each node contains:*
