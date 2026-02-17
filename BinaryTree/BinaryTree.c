@@ -1,63 +1,76 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 struct Node {
-    int data;
-    struct Node *right;
-    struct Node *left;
-    
+int data;
+struct Node *right;
+struct Node *left;
 };
 
 struct Node *createnode(int value){
-    struct Node *newnode = (struct Node*)malloc(sizeof(struct Node));
-if(newnode == NULL){
-    printf("memory alocation failed ");
-    return NULL;
-}
+    struct Node *newnode = (struct Node *)malloc(sizeof(struct Node));
 
-
-    newnode->data = value;
-    newnode->right = NULL;
-    newnode->left = NULL;
-    return newnode;
+    if(newnode == NULL){
+        printf("memory allocation failed");
+        return NULL;}
+        newnode->data = value;
+        newnode->right = NULL;
+        newnode->left = NULL;
+        return newnode;
+    
 }
-void printtree(struct Node *root){
-    if(root != NULL){
+struct Node *insert(struct Node *root,int value){
+    struct Node *newnode = createnode(value);
 
-        printf("%d ",root->data);
-        printtree(root->left);
-        
- printtree(root->right);
-    }
-}
-struct Node *insert(struct Node *root,int x){
     if(root == NULL){
-        return createnode(x);
+        return newnode;
     }
-    if(x < root->data){
-        root->left = insert(root->left,x);
+
+    if(value < root->data){
+        root->left = insert(root->left,value);
     }
     else{
-        root->right = insert(root->right,x);
+        root->right = insert(root->right,value);
     }
     return root;
 }
-int countleaves(struct Node *root){
-    if(root == NULL){
-        return 0;
-    }
-    if(root->left == NULL && root->right == NULL){
-        return 1;
-    }
-    return 1 + countleaves(root->left) + countleaves(root->right);
+void printtree(struct Node *root){
+ if(root != NULL){
+        printtree(root->left);
+        printf("%d ",root->data);
+        printtree(root->right);
+ }
+    
+}
+struct Node *search(struct Node *root,int input){
+   if(root == NULL){
+    return NULL;
+   }
+
+        if(input == root->data){
+            return root;
+        }
+        else if(input < root->data){
+            return search(root->left,input);
+        }
+        else{
+            return search(root->right,input);
+        }
+        
+    
 }
 int main(){
+struct Node *root = NULL;
 
-    struct Node *root = createnode(10);
-
-    root->left = createnode(11);
-    root->right = createnode(90);
-   
+root = insert(root,10);
+insert(root,67);
+ insert(root, 5);
+ 
+ struct Node *curr = search(root,67);
+if(curr != NULL) {
+    printf("Found: %d\n", curr->data);
+} else {
+    printf("Not found\n");
+}
 printtree(root);
-int result = countleaves(root);
-printf("\n%d",result);
 }
