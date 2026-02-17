@@ -1,4 +1,4 @@
-[Data Structures And Algorithmns](https://github.com/JamrsGab0629/DataStructuresAndAlgorithmns/blob/ed0d89912fc42d48d49aed6d31090957930e141f/1_Dyu63sMUVL-gYEZISOE2BQ.jpg)
+![Data Structures And Algorithmns](https://github.com/JamrsGab0629/DataStructuresAndAlgorithmns/blob/ed0d89912fc42d48d49aed6d31090957930e141f/1_Dyu63sMUVL-gYEZISOE2BQ.jpg)
 
 # DataStructuresAndAlgorithmns
 
