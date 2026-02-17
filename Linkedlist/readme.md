@@ -27,7 +27,7 @@ Here’s an example of a **singly linked list**:
 - `next` → pointer to the next node
 
 ---
-c```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
