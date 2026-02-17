@@ -1,6 +1,6 @@
 # 🌳 Binary Tree
 
-![Binary Tree](binary-tree.png)  
+![Binary Tree](https://github.com/JamrsGab0629/DataStructuresAndAlgorithmns/blob/6c0e0cb1f3f5ac1903845623d1b5c265b1b28a89/BinaryTree/Introduction-to-Binary-Tree.webp)
 *A visual representation of a Binary Tree*
 
 ---
