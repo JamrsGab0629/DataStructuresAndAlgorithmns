@@ -1,40 +1,35 @@
 #include <stdio.h>
 #include <string.h>
 
-int max(int a,int b){
-if(a > b){
-    return a;
-}
-else{
-    return b;
-}
-}
-int lcs(char str1[],char str2[]){
-    int m = strlen(str1);
-    int n = strlen(str2);
 
-    int dp[m+1][n+1];
 
-    for(int i = 0; i <= m; i++){
-        for(int j = 0; j <= n; j++){
-            if(i == 0 || j == 0){
-                dp[i][j] = 0;
-            }
-            else if(str1[i - 1] == str2[j - 1]){
-                dp[i][j] = dp[i - 1][j - 1] + 1;
-            }
-            else {
-                dp[i][j] = max(dp[i - 1][j],dp[i][j - 1]);
-            }
-
-        }
+int min(int x,int y ,int z){
+      return (x < y) ? (x < z ? x : z) : (y < z ? y : z); 
+}
+int distance(char *str1,char *str2,int m,int n){
+    if(n == 0){
+        return m;
     }
-    return dp[m][n];
+    if(m == 0){
+        return n;
+    }
+    if(str1[m - 1] == str2[n - 1]){
+        return distance(str1,str2,m - 1,n - 1);
+    }
+    return 1 + min(distance(str1,str2,m,n - 1),distance(str1,str2,m - 1,n),distance(str1,str2,m - 1,n - 1)
+);
+
 }
+
 
 int main(){
-char str1[] = "COMICS";
-char str2[] = "COMSCI";
 
-printf("%d",lcs(str1,str2));
+    char str1[] = "COMSCI";
+    char str2[] = "COMICS";
+    int size1 = strlen(str1);
+    int size2 = strlen(str2);
+
+    int result = distance(str1,str2,size1,size2);
+    printf("%d",result);
+    return 0;
 }
