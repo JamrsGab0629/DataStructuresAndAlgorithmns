@@ -16,7 +16,9 @@ int distance(char *str1,char *str2,int m,int n){
     if(str1[m - 1] == str2[n - 1]){
         return distance(str1,str2,m - 1,n - 1);
     }
-    return 1 + min(distance(str1,str2,m,n - 1),distance(str1,str2,m - 1,n),distance(str1,str2,m - 1,n - 1)
+    return 1 + min(distance(str1,str2,m,n - 1),// insert
+    distance(str1,str2,m - 1,n),// remove
+    distance(str1,str2,m - 1,n - 1) // replace
 );
 
 }
