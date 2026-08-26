@@ -24,8 +24,6 @@ I use this repo to:
 
 ## 🧠 Topics Covered
 
-
-
 -Dynamic Programming
 -Linked List
 -Arrays
