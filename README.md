@@ -29,3 +29,4 @@ I use this repo to:
 -Arrays
 -Sorting Algo
 -Searching Algo
+-Matrix
