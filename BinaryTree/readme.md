@@ -43,7 +43,7 @@ It is widely used in **searching, sorting, expression parsing**, and **hierarchi
 ### 2️⃣ Breadth-First Search (BFS)
 - Level-order traversal (visits nodes level by level)  
 - Typically implemented using a **queue**  
-
+- bfs
 ---
 
 ## 💻 Example (C)
