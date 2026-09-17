@@ -17,7 +17,7 @@ I use this repo to:
 - Build strong CS fundamentals  
 - Improve logical thinking  
 - Prepare for exams
-
+- be good at solving
 
 
 ---
