@@ -37,7 +37,7 @@ void InsertAtEnd(struct Node **head,int value){
     while(temp->next != NULL){
         temp = temp->next;
     }
-    temp->next = newnode;
+    temp->next = newnode;b
 }
 int main(){
 

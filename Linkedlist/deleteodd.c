@@ -19,12 +19,7 @@ struct Node *createnode(int value){
 }
 
 struct Node *deleteodd(struct Node *head){
-    if(head->data % 2 != 0){
-        struct Node *temp = head;
-        head = head->next;
-        free(temp);
-        
-    }
+   
     struct Node *current = head;
     struct Node *prev = NULL;
 

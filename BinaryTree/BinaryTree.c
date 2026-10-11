@@ -46,8 +46,7 @@ struct Node *search(struct Node *root,int input){
    if(root == NULL){
     return NULL;
    }
-
-        if(input == root->data){
+    if(input == root->data){
             return root;
         }
         else if(input < root->data){
